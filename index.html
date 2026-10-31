@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DWARF CFI Visualizer — .eh_frame & Unwind Inspector</title>
+  <meta name="description" content="Production-grade interactive client-side DWARF Call Frame Information (.eh_frame) & ELF visualizer and CFA unwind matrix inspector.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="brand">
+      <div class="brand-icon">CFI</div>
+      <div class="brand-text">
+        <h1>DWARF CFI Visualizer</h1>
+        <div class="brand-subtitle">Interactive .eh_frame & Unwind Table Inspector</div>
+      </div>
+    </div>
+
+    <div class="header-controls">
+      <div class="control-group">
+        <label for="arch-select">ABI / Arch:</label>
+        <select id="arch-select" aria-label="Select Architecture ABI">
+          <option value="x86_64" selected>x86-64 (AMD64 / System V)</option>
+          <option value="aarch64">AArch64 (ARM 64-bit)</option>
+          <option value="i386">i386 (x86 32-bit)</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="sample-select">Preset:</label>
+        <select id="sample-select" aria-label="Load Predefined Sample">
+          <option value="SAMPLE_1_STANDARD_X86_64">Sample 1: Standard x86-64 Frame</option>
+          <option value="SAMPLE_2_CPP_EXCEPTION_LSDA">Sample 2: C++ Exception (LSDA)</option>
+          <option value="SAMPLE_3_REMEMBER_RESTORE_STATE">Sample 3: Complex State Machine</option>
+          <option value="SAMPLE_4_SIGNED_TWOS_COMPLEMENT">Sample 4: Signed 2's-Complement</option>
+          <option value="SAMPLE_5_SYNTHETIC_ELF64">Sample 5: Complete ELF64 Binary</option>
+        </select>
+      </div>
+
+      <a href="https://github.com/slopgobblercobbler/dwarf-cfi-visualizer" target="_blank" rel="noopener noreferrer" class="btn btn-sm">
+        <svg height="16" width="16" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+        </svg>
+        GitHub
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Body -->
+  <main>
+    <!-- Notification Alert Box -->
+    <div id="alert-container" style="display: none;"></div>
+
+    <!-- Input Section -->
+    <section class="input-section">
+      <div class="input-tabs">
+        <button class="input-tab active" data-input-mode="file">Upload ELF / Binary</button>
+        <button class="input-tab" data-input-mode="hex">Paste Raw Hex Bytecode</button>
+      </div>
+
+      <!-- File Dropzone -->
+      <div id="dropzone-container" class="dropzone-container">
+        <div id="dropzone" class="dropzone">
+          <div class="dropzone-icon">📁</div>
+          <div class="dropzone-text">Drag & drop ELF, PRX, or .eh_frame binary slice here, or click to browse</div>
+          <div class="dropzone-hint">Supports ELF64, ELF32, Orbis/Prospero PRX, and raw section dumps. 100% Client-Side.</div>
+          <input type="file" id="file-input" style="display: none;">
+        </div>
+        <div id="file-info-label" style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-blue);"></div>
+      </div>
+
+      <!-- Hex Bytecode Input -->
+      <div id="hex-input-container" class="hex-input-container" style="display: none;">
+        <textarea id="hex-textarea" class="hex-textarea" placeholder="Paste hex bytecode here (supports 0x14, 0x00... or raw 14000000 00000000...)"></textarea>
+        <div class="hex-actions">
+          <div class="preset-chips">
+            <span class="chip" data-sample="SAMPLE_1_STANDARD_X86_64">Standard x86-64</span>
+            <span class="chip" data-sample="SAMPLE_2_CPP_EXCEPTION_LSDA">C++ Exception (LSDA)</span>
+            <span class="chip" data-sample="SAMPLE_3_REMEMBER_RESTORE_STATE">State Stack (push/pop)</span>
+            <span class="chip" data-sample="SAMPLE_4_SIGNED_TWOS_COMPLEMENT">Signed 2's-Complement</span>
+            <span class="chip" data-sample="SAMPLE_5_SYNTHETIC_ELF64">Synthetic ELF64</span>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button id="btn-format-hex" class="btn btn-sm">Format Hex</button>
+            <button id="btn-clear-hex" class="btn btn-sm">Clear</button>
+            <button id="btn-decode-hex" class="btn btn-sm btn-primary">Decode Bytecode</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Telemetry Bar -->
+    <section class="telemetry-bar">
+      <div class="stat-card">
+        <div class="stat-label">Binary Format</div>
+        <div id="stats-format" class="stat-value accent">Detecting...</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">CIE Records</div>
+        <div id="stats-cie-count" class="stat-value">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">FDE Records</div>
+        <div id="stats-fde-count" class="stat-value">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Displacement Audit</div>
+        <div id="stats-audit" class="stat-value ok">PASS</div>
+      </div>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <nav class="view-nav">
+      <button class="view-tab active" data-tab="tab-explorer">
+        <span>📋</span> Records Explorer
+      </button>
+      <button class="view-tab" data-tab="tab-matrix">
+        <span>📊</span> Unwind Matrix (readelf -wF)
+      </button>
+      <button class="view-tab" data-tab="tab-disasm">
+        <span>⚙️</span> CFI Disassembly
+      </button>
+      <button class="view-tab" data-tab="tab-landing-pads">
+        <span>🛡️</span> Landing Pads & LSDA
+      </button>
+      <button class="view-tab" data-tab="tab-elf">
+        <span>📦</span> ELF Headers
+      </button>
+      <button class="view-tab" data-tab="tab-hex">
+        <span>🔍</span> Hex Inspector
+      </button>
+    </nav>
+
+    <!-- Panel 1: Records Explorer -->
+    <section id="tab-explorer" class="view-panel active">
+      <div class="explorer-layout">
+        <!-- Sidebar Record List -->
+        <div class="record-list-panel">
+          <div class="panel-header">
+            <span>CFI Entries</span>
+            <input type="text" id="record-search" placeholder="Filter..." style="background: var(--bg-primary); border: 1px solid var(--border-color); color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; width: 110px;">
+          </div>
+          <div id="records-list"></div>
+        </div>
+
+        <!-- Detail View -->
+        <div class="record-detail-panel">
+          <div id="record-detail"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Panel 2: Unwind Matrix -->
+    <section id="tab-matrix" class="view-panel">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <label for="fde-select-matrix" style="font-size: 0.85rem; color: var(--text-secondary);">Select Target Frame:</label>
+          <select id="fde-select-matrix"></select>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button id="btn-export-csv" class="btn btn-sm">Export CSV</button>
+          <button id="btn-export-ascii" class="btn btn-sm">Export readelf ASCII</button>
+          <button id="btn-export-json" class="btn btn-sm btn-outline">Export JSON</button>
+        </div>
+      </div>
+      <div id="matrix-wrapper" class="table-wrapper"></div>
+    </section>
+
+    <!-- Panel 3: Disassembly -->
+    <section id="tab-disasm" class="view-panel">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+        <h3 style="font-size: 0.95rem; font-weight: 700;">CFA State Machine Bytecode Instructions</h3>
+        <button id="btn-copy-disasm" class="btn btn-sm">Copy Disassembly</button>
+      </div>
+      <div id="disasm-list" class="disasm-list"></div>
+    </section>
+
+    <!-- Panel 4: Landing Pads & LSDA -->
+    <section id="tab-landing-pads" class="view-panel">
+      <div id="landing-pad-container"></div>
+    </section>
+
+    <!-- Panel 5: ELF Headers -->
+    <section id="tab-elf" class="view-panel">
+      <div id="elf-header-container"></div>
+    </section>
+
+    <!-- Panel 6: Hex Inspector -->
+    <section id="tab-hex" class="view-panel">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+        <span style="font-size: 0.85rem; color: var(--text-secondary); font-family: var(--font-mono);">
+          Raw Bytecode Stream (16 bytes/row, little-endian)
+        </span>
+      </div>
+      <div id="hex-inspector" class="hex-inspector-container"></div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      <strong>DWARF CFI Visualizer</strong> — Production-grade static client-side inspection tool hosted on
+      <a href="https://slopgobblercobbler.github.io/dwarf-cfi-visualizer/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.
+      Licensed under <a href="https://github.com/slopgobblercobbler/dwarf-cfi-visualizer/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT</a>.
+    </p>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

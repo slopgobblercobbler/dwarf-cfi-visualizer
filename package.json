@@ -1,0 +1,21 @@
+{
+  "name": "dwarf-cfi-visualizer",
+  "version": "1.0.0",
+  "description": "Interactive client-side DWARF Call Frame Information (.eh_frame) & ELF visualizer and unwind table inspector.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "keywords": [
+    "dwarf",
+    "cfi",
+    "eh-frame",
+    "elf",
+    "unwind",
+    "stack-unwinding",
+    "visualizer",
+    "reverse-engineering"
+  ],
+  "author": "slopgobblercobbler",
+  "license": "MIT"
+}
