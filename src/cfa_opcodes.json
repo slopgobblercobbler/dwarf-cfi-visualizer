@@ -1,0 +1,20 @@
+{
+  "DW_CFA_advance_loc": 64,
+  "DW_CFA_offset": 128,
+  "DW_CFA_restore": 192,
+  "DW_CFA_nop": 0,
+  "DW_CFA_set_loc": 1,
+  "DW_CFA_advance_loc1": 2,
+  "DW_CFA_advance_loc2": 3,
+  "DW_CFA_advance_loc4": 4,
+  "DW_CFA_offset_extended": 5,
+  "DW_CFA_restore_extended": 6,
+  "DW_CFA_undefined": 7,
+  "DW_CFA_same_value": 8,
+  "DW_CFA_register": 9,
+  "DW_CFA_remember_state": 10,
+  "DW_CFA_restore_state": 11,
+  "DW_CFA_def_cfa": 12,
+  "DW_CFA_def_cfa_register": 13,
+  "DW_CFA_def_cfa_offset": 14
+}
