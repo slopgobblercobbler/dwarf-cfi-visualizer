@@ -129,3 +129,8 @@ npx serve .
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
+
+## DWARF Exception Landing Pad Preservation
+
+Details DWARF CFI table reconstruction and exception landing pad alignment verification in AnyPS5 relinker.
