@@ -1,0 +1,12 @@
+{
+  "DW_FORM_addr": 1,
+  "DW_FORM_block": 9,
+  "DW_FORM_data1": 11,
+  "DW_FORM_data2": 5,
+  "DW_FORM_data4": 6,
+  "DW_FORM_data8": 7,
+  "DW_FORM_string": 8,
+  "DW_FORM_strp": 14,
+  "DW_FORM_ref4": 19,
+  "DW_FORM_ref8": 20
+}
