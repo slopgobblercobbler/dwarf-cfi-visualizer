@@ -1,0 +1,12 @@
+{
+  "max_stack_depth": 64,
+  "rule_types": [
+    "undefined",
+    "same_value",
+    "offset",
+    "val_offset",
+    "register",
+    "expression",
+    "val_expression"
+  ]
+}
