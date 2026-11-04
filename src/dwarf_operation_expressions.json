@@ -1,0 +1,23 @@
+{
+  "DW_OP_addr": 3,
+  "DW_OP_deref": 6,
+  "DW_OP_const1u": 8,
+  "DW_OP_const1s": 9,
+  "DW_OP_const2u": 10,
+  "DW_OP_const2s": 11,
+  "DW_OP_const4u": 12,
+  "DW_OP_const4s": 13,
+  "DW_OP_const8u": 14,
+  "DW_OP_const8s": 15,
+  "DW_OP_constu": 16,
+  "DW_OP_consts": 17,
+  "DW_OP_dup": 18,
+  "DW_OP_drop": 19,
+  "DW_OP_over": 20,
+  "DW_OP_swap": 22,
+  "DW_OP_plus": 34,
+  "DW_OP_plus_uconst": 35,
+  "DW_OP_shl": 36,
+  "DW_OP_shr": 37,
+  "DW_OP_xor": 39
+}
