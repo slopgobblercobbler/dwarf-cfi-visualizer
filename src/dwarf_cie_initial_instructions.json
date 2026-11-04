@@ -1,0 +1,6 @@
+{
+  "architecture": "x86_64",
+  "default_cfa_register": 7,
+  "default_cfa_offset": 8,
+  "return_address_register": 16
+}
