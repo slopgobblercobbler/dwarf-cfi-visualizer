@@ -1,0 +1,6 @@
+{
+  "z": "Augmentation data length present",
+  "L": "LSDA pointer encoding present in augmentation",
+  "R": "FDE pointer encoding present in augmentation",
+  "P": "Personality routine pointer present in augmentation"
+}
