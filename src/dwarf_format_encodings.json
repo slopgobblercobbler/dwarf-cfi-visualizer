@@ -1,0 +1,13 @@
+{
+  "DW_EH_PE_absptr": 0,
+  "DW_EH_PE_uleb128": 1,
+  "DW_EH_PE_udata2": 2,
+  "DW_EH_PE_udata4": 3,
+  "DW_EH_PE_udata8": 4,
+  "DW_EH_PE_sleb128": 9,
+  "DW_EH_PE_sdata2": 10,
+  "DW_EH_PE_sdata4": 11,
+  "DW_EH_PE_sdata8": 12,
+  "DW_EH_PE_pcrel": 16,
+  "DW_EH_PE_indirect": 128
+}
