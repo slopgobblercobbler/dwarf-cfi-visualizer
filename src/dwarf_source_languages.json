@@ -1,0 +1,10 @@
+{
+  "DW_LANG_C89": 1,
+  "DW_LANG_C": 2,
+  "DW_LANG_C_plus_plus": 4,
+  "DW_LANG_C99": 12,
+  "DW_LANG_C11": 29,
+  "DW_LANG_C_plus_plus_11": 26,
+  "DW_LANG_C_plus_plus_14": 33,
+  "DW_LANG_C_plus_plus_20": 40
+}
