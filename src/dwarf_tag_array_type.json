@@ -1,0 +1,11 @@
+{
+  "DW_TAG_array_type": {
+    "tag_value": 1,
+    "has_children": true,
+    "description": "Describes an array type structure"
+  },
+  "DW_TAG_subrange_type": {
+    "tag_value": 33,
+    "description": "Defines array bounds"
+  }
+}
