@@ -1,0 +1,6 @@
+{
+  "DW_LNE_define_file": {
+    "opcode": 3,
+    "description": "Extended opcode defining new source file entry dynamically"
+  }
+}
