@@ -1,0 +1,7 @@
+{
+  "DW_TAG_subroutine_type": {
+    "tag_value": 33,
+    "has_children": true,
+    "description": "Describes a function pointer or signature type"
+  }
+}
