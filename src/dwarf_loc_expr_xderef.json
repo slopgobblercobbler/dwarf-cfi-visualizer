@@ -1,0 +1,5 @@
+{
+  "DW_OP_xderef": "0x18",
+  "DW_OP_xderef_size": "0x95",
+  "supports_extended_address_space": true
+}
