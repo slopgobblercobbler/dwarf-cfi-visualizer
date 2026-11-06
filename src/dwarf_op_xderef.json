@@ -1,0 +1,6 @@
+{
+  "DW_OP_xderef": {
+    "opcode": 24,
+    "description": "Extended dereference popping address space identifier and address"
+  }
+}
