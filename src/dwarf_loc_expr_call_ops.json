@@ -1,0 +1,6 @@
+{
+  "DW_OP_call2": "0x98",
+  "DW_OP_call4": "0x99",
+  "DW_OP_call_ref": "0x9A",
+  "allows_nested_dwarf_subroutines": true
+}
