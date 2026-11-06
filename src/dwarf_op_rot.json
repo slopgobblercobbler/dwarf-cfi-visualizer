@@ -1,0 +1,6 @@
+{
+  "DW_OP_rot": {
+    "opcode": 23,
+    "description": "Rotates top three stack entries"
+  }
+}
