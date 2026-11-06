@@ -1,0 +1,11 @@
+{
+  "DW_OP_and": {
+    "opcode": 26
+  },
+  "DW_OP_or": {
+    "opcode": 33
+  },
+  "DW_OP_xor": {
+    "opcode": 39
+  }
+}
