@@ -1,0 +1,9 @@
+{
+  "DW_OP_deref_size": {
+    "opcode": 148,
+    "operands": [
+      "1_byte_size"
+    ],
+    "description": "Dereferences specified byte width from memory stack"
+  }
+}
