@@ -1,0 +1,9 @@
+{
+  "Undefined": 0,
+  "SameValue": 1,
+  "Offset": 2,
+  "ValOffset": 3,
+  "Register": 4,
+  "Expression": 5,
+  "ValExpression": 6
+}
