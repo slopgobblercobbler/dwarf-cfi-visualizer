@@ -1,0 +1,6 @@
+{
+  "table_enc": "DW_EH_PE_datarel | DW_EH_PE_sdata4",
+  "entry_size_bytes": 8,
+  "initial_loc_offset": 0,
+  "fde_address_offset": 4
+}
