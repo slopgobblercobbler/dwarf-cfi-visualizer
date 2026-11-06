@@ -1,0 +1,7 @@
+{
+  "unit_length_bytes": 4,
+  "version": 5,
+  "address_size": 8,
+  "segment_selector_size": 0,
+  "offset_entry_count_bytes": 4
+}
