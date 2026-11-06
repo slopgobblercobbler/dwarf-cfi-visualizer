@@ -1,6 +1,6 @@
 {
-  "DW_CC_normal": "0x01",
-  "DW_CC_program": "0x02",
-  "DW_CC_nocall": "0x03",
-  "DW_CC_pass_by_reference": "0x04"
+  "DW_CC_normal": 1,
+  "DW_CC_program": 2,
+  "DW_CC_nocall": 3,
+  "description": "DWARF calling convention attribute values"
 }
