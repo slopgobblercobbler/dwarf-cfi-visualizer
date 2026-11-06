@@ -1,0 +1,9 @@
+{
+  "DW_OP_and": "0x1A",
+  "DW_OP_or": "0x1B",
+  "DW_OP_xor": "0x1C",
+  "DW_OP_not": "0x1D",
+  "DW_OP_shl": "0x24",
+  "DW_OP_shr": "0x25",
+  "DW_OP_shra": "0x26"
+}
