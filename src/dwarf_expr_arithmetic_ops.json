@@ -1,0 +1,12 @@
+{
+  "DW_OP_abs": "0x19",
+  "DW_OP_and": "0x1a",
+  "DW_OP_div": "0x1b",
+  "DW_OP_minus": "0x1c",
+  "DW_OP_mod": "0x1d",
+  "DW_OP_mul": "0x1e",
+  "DW_OP_neg": "0x1f",
+  "DW_OP_not": "0x20",
+  "DW_OP_or": "0x21",
+  "DW_OP_plus": "0x22"
+}
