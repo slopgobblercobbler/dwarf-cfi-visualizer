@@ -1,0 +1,6 @@
+{
+  "DW_TAG_pointer_type": {
+    "tag_value": 15,
+    "description": "Describes a pointer to another data type"
+  }
+}
