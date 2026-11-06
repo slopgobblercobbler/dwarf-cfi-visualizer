@@ -1,0 +1,6 @@
+{
+  "DW_ATE_boolean": 2,
+  "DW_ATE_complex_float": 3,
+  "DW_ATE_imaginary_float": 9,
+  "description": "DWARF base type encoding attributes"
+}
