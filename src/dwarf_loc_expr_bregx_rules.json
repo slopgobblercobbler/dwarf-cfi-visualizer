@@ -1,0 +1,5 @@
+{
+  "DW_OP_bregx": "0x92",
+  "requires_uleb128_reg": true,
+  "requires_sleb128_offset": true
+}
