@@ -1,0 +1,6 @@
+{
+  "DW_OP_swap": {
+    "opcode": 22,
+    "description": "Swaps top two elements on the DWARF expression stack"
+  }
+}
