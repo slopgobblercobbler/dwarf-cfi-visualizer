@@ -1,0 +1,6 @@
+{
+  "DW_OP_call2": 152,
+  "DW_OP_call4": 153,
+  "DW_OP_call_ref": 154,
+  "description": "Performs DIE subroutine call in current or foreign compilation unit"
+}
