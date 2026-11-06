@@ -1,0 +1,11 @@
+{
+  "form_classes": [
+    "address",
+    "block",
+    "constant",
+    "string",
+    "flag",
+    "reference",
+    "exprloc"
+  ]
+}
