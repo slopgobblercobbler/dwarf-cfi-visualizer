@@ -1,0 +1,7 @@
+{
+  "DW_CC_normal": 1,
+  "DW_CC_program": 2,
+  "DW_CC_nocall": 3,
+  "DW_CC_pass_by_reference": 4,
+  "DW_CC_pass_by_value": 5
+}
