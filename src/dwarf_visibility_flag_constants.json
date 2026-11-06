@@ -1,0 +1,5 @@
+{
+  "DW_VIS_local_flag": "0x0001",
+  "DW_VIS_exported_flag": "0x0002",
+  "DW_VIS_qualified_flag": "0x0004"
+}
