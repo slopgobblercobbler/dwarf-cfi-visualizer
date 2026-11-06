@@ -1,0 +1,5 @@
+{
+  "DW_OP_deref_type": "0xA6",
+  "size_operand_bits": 8,
+  "requires_type_die_ref": true
+}
