@@ -1,0 +1,5 @@
+{
+  "DW_OP_GNU_entry_value": "0xF3",
+  "gnu_extension": true,
+  "equivalent_standard_opcode": "DW_OP_entry_value"
+}
