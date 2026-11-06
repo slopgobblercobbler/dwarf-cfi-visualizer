@@ -1,0 +1,5 @@
+{
+  "DW_OP_entry_value": "0xA3",
+  "requires_length_uleb128": true,
+  "preserves_caller_registers": true
+}
