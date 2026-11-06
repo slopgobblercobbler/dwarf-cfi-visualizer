@@ -1,0 +1,6 @@
+{
+  "DW_OP_not": {
+    "opcode": 32,
+    "description": "Bitwise NOT operation on top expression stack element"
+  }
+}
