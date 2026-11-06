@@ -1,0 +1,6 @@
+{
+  "DW_CC_normal": "0x01",
+  "DW_CC_program": "0x02",
+  "DW_CC_nocall": "0x03",
+  "DW_CC_pass_by_reference": "0x04"
+}
