@@ -1,0 +1,10 @@
+{
+  "DW_TAG_enumeration_type": {
+    "tag_value": 4,
+    "has_children": true
+  },
+  "DW_TAG_enumerator": {
+    "tag_value": 40,
+    "has_children": false
+  }
+}
