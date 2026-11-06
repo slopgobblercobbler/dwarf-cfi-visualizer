@@ -1,0 +1,5 @@
+{
+  "DW_OP_const_type": "0xA4",
+  "requires_die_ref_uleb128": true,
+  "requires_byte_size_header": true
+}
