@@ -1,0 +1,10 @@
+{
+  "DW_OP_bit_piece": {
+    "opcode": 157,
+    "operands": [
+      "uleb128_size",
+      "uleb128_offset"
+    ],
+    "description": "Extracts bitfield piece from object value"
+  }
+}
