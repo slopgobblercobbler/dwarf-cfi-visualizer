@@ -134,3 +134,6 @@ This project is licensed under the [MIT License](LICENSE).
 ## DWARF Exception Landing Pad Preservation
 
 Details DWARF CFI table reconstruction and exception landing pad alignment verification in AnyPS5 relinker.
+
+## Update 2026-11-06T20:39:21Z
+- Enhanced DWARF CFI unwind record visualizer performance and precision.
