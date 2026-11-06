@@ -1,0 +1,6 @@
+{
+  "DW_OP_form_tls_address": {
+    "opcode": 155,
+    "description": "Translates TLS thread-local displacement into target process address"
+  }
+}
