@@ -1,0 +1,8 @@
+{
+  "DW_OP_dup": "0x12",
+  "DW_OP_drop": "0x13",
+  "DW_OP_over": "0x14",
+  "DW_OP_pick": "0x15",
+  "DW_OP_swap": "0x16",
+  "DW_OP_rot": "0x17"
+}
