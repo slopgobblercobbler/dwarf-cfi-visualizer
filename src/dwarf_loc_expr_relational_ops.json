@@ -1,0 +1,8 @@
+{
+  "DW_OP_eq": "0x29",
+  "DW_OP_ge": "0x2A",
+  "DW_OP_gt": "0x2B",
+  "DW_OP_le": "0x2C",
+  "DW_OP_lt": "0x2D",
+  "DW_OP_ne": "0x2E"
+}
