@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "address_size_bytes": 8,
+  "segment_size_bytes": 0,
+  "alignment_boundary": 16
+}
