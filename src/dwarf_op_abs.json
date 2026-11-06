@@ -1,0 +1,6 @@
+{
+  "DW_OP_abs": {
+    "opcode": 25,
+    "description": "Computes absolute value of top stack element"
+  }
+}
