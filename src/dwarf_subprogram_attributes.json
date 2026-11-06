@@ -1,0 +1,6 @@
+{
+  "DW_AT_low_pc": "0x11",
+  "DW_AT_high_pc": "0x12",
+  "DW_AT_frame_base": "0x40",
+  "DW_AT_call_all_calls": "0x7a"
+}
