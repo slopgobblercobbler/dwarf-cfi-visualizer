@@ -1,0 +1,6 @@
+{
+  "DW_MACRO_define": 1,
+  "DW_MACRO_undef": 2,
+  "DW_MACRO_start_file": 3,
+  "DW_MACRO_end_file": 4
+}
