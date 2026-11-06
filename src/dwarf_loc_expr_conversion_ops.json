@@ -1,0 +1,5 @@
+{
+  "DW_OP_convert": "0xA8",
+  "DW_OP_reinterpret": "0xA9",
+  "supports_generic_type_casting": true
+}
