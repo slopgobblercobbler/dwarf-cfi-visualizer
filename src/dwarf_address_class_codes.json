@@ -1,0 +1,7 @@
+{
+  "DW_ADDR_none": 0,
+  "DW_ADDR_near16": 1,
+  "DW_ADDR_far16": 2,
+  "DW_ADDR_near32": 4,
+  "DW_ADDR_far32": 5
+}
