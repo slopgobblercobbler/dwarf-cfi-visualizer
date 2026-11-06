@@ -1,0 +1,5 @@
+{
+  "DW_OP_implicit_pointer": "0xA0",
+  "requires_die_ref_uleb128": true,
+  "requires_sleb128_byte_offset": true
+}
