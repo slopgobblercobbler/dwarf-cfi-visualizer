@@ -1,0 +1,5 @@
+{
+  "DW_LNE_set_discriminator": "0x04",
+  "discriminator_leb128": true,
+  "resets_on_basic_block": false
+}
