@@ -1,0 +1,6 @@
+{
+  "has_z_augmentation": true,
+  "has_lsda_pointer": true,
+  "lsda_encoding_mask": "0x0F",
+  "personality_routine_supported": true
+}
