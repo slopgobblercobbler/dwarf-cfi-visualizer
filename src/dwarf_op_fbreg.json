@@ -1,0 +1,9 @@
+{
+  "DW_OP_fbreg": {
+    "opcode": 145,
+    "operands": [
+      "sleb128_offset"
+    ],
+    "description": "Evaluates base frame address plus signed offset"
+  }
+}
