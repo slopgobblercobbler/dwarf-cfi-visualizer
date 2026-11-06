@@ -1,0 +1,5 @@
+{
+  "DW_OP_lit0": "0x30",
+  "DW_OP_lit31": "0x4F",
+  "num_literal_opcodes": 32
+}
