@@ -1,0 +1,6 @@
+{
+  "form_code": "0x16",
+  "form_name": "DW_FORM_indirect",
+  "disallowed_nested_indirect": true,
+  "requires_leb128_header": true
+}
