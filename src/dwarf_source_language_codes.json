@@ -1,6 +1,5 @@
 {
-  "DW_LANG_C_plus_plus": "0x0004",
-  "DW_LANG_C_plus_plus_11": "0x001A",
-  "DW_LANG_C_plus_plus_14": "0x0021",
-  "DW_LANG_C_plus_plus_20": "0x002B"
+  "DW_LANG_C_plus_plus_11": 26,
+  "DW_LANG_C_plus_plus_14": 33,
+  "DW_LANG_C_plus_plus_20": 40
 }
