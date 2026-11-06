@@ -1,0 +1,5 @@
+{
+  "ttype_encoding": "DW_EH_PE_indirect | DW_EH_PE_pcrel | DW_EH_PE_sdata8",
+  "type_filter_size_bytes": 1,
+  "class_info_alignment": 8
+}
