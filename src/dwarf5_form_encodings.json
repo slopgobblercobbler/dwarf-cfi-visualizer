@@ -1,0 +1,8 @@
+{
+  "DW_FORM_strx": "0x1a",
+  "DW_FORM_addrx": "0x1b",
+  "DW_FORM_ref_sup4": "0x1c",
+  "DW_FORM_strp_sup": "0x1d",
+  "DW_FORM_data16": "0x1e",
+  "DW_FORM_line_strp": "0x1f"
+}
